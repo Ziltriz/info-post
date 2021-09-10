@@ -28,12 +28,12 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/dx.material.custom-scheme"
             ],
             "styles": [
-              "node_modules/devextreme/dist/css/dx.common.css",
-              "node_modules/devextreme/dist/css/dx.light.css",
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/devexteme/dist/css/dx.material.custom-scheme.css"
             ],
             "scripts": []
           },
