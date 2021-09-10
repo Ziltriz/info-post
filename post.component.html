@@ -1,0 +1,11 @@
+<div id="post">
+     <dx-scroll-view
+        class="scrollable-board"
+        direction="horizontal"
+        showScrollbar="always">
+        <div class="card dx-card dx-theme-text-color dx-theme-background-color" *ngFor="let hero of heroes">
+          <div class="card-subject">{{hero.title}}</div>
+          <div class="card-assignee">{{hero.body}}</div>
+        </div>
+     </dx-scroll-view>
+</div>
