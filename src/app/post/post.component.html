@@ -1,6 +1,6 @@
 <dx-data-grid 
 id="dataGrid"
-keyExpr='userId'
+itemExpr='userId'
 [dataSource]="dataSource"
 [showRowLines]="true"
 [showBorders]="true"
@@ -8,22 +8,22 @@ keyExpr='userId'
 [hoverStateEnabled]="true"
 [wordWrapEnabled]="true"
 [allowColumnResizing]="true"
-(onEditorPreparing)="editorPreparing($event)"
-(onInitNewRow)="initNewRow($event)">
+[repaintChangesOnly]="true">
     <dxi-column dataField="userId" [groupIndex]="0" caption="UserId"></dxi-column>
-    <dxi-column dataField="id" caption="Message Id"></dxi-column>
+    <dxi-column dataField="id" caption="Message Id" ></dxi-column>
     <dxi-column dataField="title" caption="Title" width="170" ></dxi-column>
     <dxi-column dataField="body" caption="Message Body" ></dxi-column>
-    
+  <dxo-paging [pageSize]="25"></dxo-paging>
+  <dxo-group-panel [visible]="true"></dxo-group-panel>
+  <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
 <dxo-editing
     mode="form"
     [allowUpdating]="true"
     [allowDeleting]="true"
-    [allowAdding]="true">
+    [allowAdding]="true"
+    >
 </dxo-editing>
-<dxo-paging [pageSize]="25"></dxo-paging>
-<dxo-group-panel [visible]="true"></dxo-group-panel>
-<dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+
 
 <dxi-column type="buttons">
     <dxi-button name="edit"></dxi-button>
