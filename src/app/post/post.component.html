@@ -1,11 +1,32 @@
-<div id="post" class="dx-material">
-     <dx-scroll-view
-        class="scrollable-board"
-        direction="horizontal"
-        showScrollbar="always">
-        <div class="card dx-card dx-theme-text-color dx-theme-background-color" *ngFor="let hero of heroes">
-          <div class="card-subject">{{hero.title}}</div>
-          <div class="card-assignee">{{hero.body}}</div>
-        </div>
-     </dx-scroll-view>
-</div>
+<dx-data-grid 
+id="dataGrid"
+keyExpr='userId'
+[dataSource]="dataSource"
+[showRowLines]="true"
+[showBorders]="true"
+[columnAutoWidth]="true"
+[hoverStateEnabled]="true"
+[wordWrapEnabled]="true"
+[allowColumnResizing]="true"
+(onEditorPreparing)="editorPreparing($event)"
+(onInitNewRow)="initNewRow($event)">
+    <dxi-column dataField="userId" [groupIndex]="0" caption="UserId"></dxi-column>
+    <dxi-column dataField="id" caption="Message Id"></dxi-column>
+    <dxi-column dataField="title" caption="Title" width="170" ></dxi-column>
+    <dxi-column dataField="body" caption="Message Body" ></dxi-column>
+    
+<dxo-editing
+    mode="form"
+    [allowUpdating]="true"
+    [allowDeleting]="true"
+    [allowAdding]="true">
+</dxo-editing>
+<dxo-paging [pageSize]="25"></dxo-paging>
+<dxo-group-panel [visible]="true"></dxo-group-panel>
+<dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+
+<dxi-column type="buttons">
+    <dxi-button name="edit"></dxi-button>
+    <dxi-button name="delete"></dxi-button>
+</dxi-column>
+</dx-data-grid>

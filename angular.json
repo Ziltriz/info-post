@@ -28,12 +28,11 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/assets/dx.material.custom-scheme"
+              "src/assets"
             ],
             "styles": [
               "src/styles.less",
-              "node_modules/devexteme/dist/css/dx.material.custom-scheme.css"
+              "C:/Users/lilm8/Desktop/PracticalJS/information-post/info-post/node_modules/devextreme/dist/css/dx.carmine.compact.css"
             ],
             "scripts": []
           },
