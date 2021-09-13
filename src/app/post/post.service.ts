@@ -1,6 +1,8 @@
 
-import { Injectable } from '@angular/core';
-import users from './posts.json';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, NgModule } from '@angular/core';
+
+
 export class Hero {
 	
 	userId!: number;
@@ -12,13 +14,16 @@ export class Hero {
 
 
 
-let heroes:Hero[] = users; 
+let _url = "https://jsonplaceholder.typicode.com/posts"; 
 
 
 @Injectable()
 export class Service {
+
+	constructor(private http:HttpClient){}
     getHeroes() {
-        return heroes;
+    
+        return this.http.get<Hero[]>(_url);
     }
     
 }

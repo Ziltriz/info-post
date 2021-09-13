@@ -1,4 +1,4 @@
-<dx-data-grid 
+<dx-data-grid  class="dataGrid"
 id="dataGrid"
 itemExpr='userId'
 [dataSource]="dataSource"
@@ -9,10 +9,50 @@ itemExpr='userId'
 [wordWrapEnabled]="true"
 [allowColumnResizing]="true"
 [repaintChangesOnly]="true">
-    <dxi-column dataField="userId" [groupIndex]="0" caption="UserId"></dxi-column>
-    <dxi-column dataField="id" caption="Message Id" ></dxi-column>
-    <dxi-column dataField="title" caption="Title" width="170" ></dxi-column>
-    <dxi-column dataField="body" caption="Message Body" ></dxi-column>
+    <dxi-column dataField="userId" [groupIndex]="0" caption="UserId">
+        <dxi-validation-rule 
+                    type="required"
+                    message="usserId is required">
+                </dxi-validation-rule>
+                <dxi-validation-rule 
+                    type="numeric"
+                    message="UserId is invalid">
+                </dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="id" caption="Message Id" >
+        <dxi-validation-rule 
+                    type="required"
+                    message="id is required">
+                </dxi-validation-rule>
+                <dxi-validation-rule 
+                    type="numeric"
+                    message="Id is invalid">
+                </dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="title" caption="Title" width="170" > 
+        <dxi-validation-rule 
+                    type="required"
+                    message="Title is required">
+                </dxi-validation-rule>
+                <dxi-validation-rule 
+                    type="stringLength"
+                    [min]="1"
+                    [max]="256"
+                    message="Body is invalid">
+                </dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="body" caption="Message Body" >
+        <dxi-validation-rule 
+                    type="required"
+                    message="Title is required">
+                </dxi-validation-rule>
+                <dxi-validation-rule 
+                    type="stringLength"
+                    [min]="1"
+                    [max]="1000"
+                    message="Message body is invalid">
+                </dxi-validation-rule>
+    </dxi-column>
   <dxo-paging [pageSize]="25"></dxo-paging>
   <dxo-group-panel [visible]="true"></dxo-group-panel>
   <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
@@ -21,10 +61,8 @@ itemExpr='userId'
     [allowUpdating]="true"
     [allowDeleting]="true"
     [allowAdding]="true"
-    >
+    > 
 </dxo-editing>
-
-
 <dxi-column type="buttons">
     <dxi-button name="edit"></dxi-button>
     <dxi-button name="delete"></dxi-button>

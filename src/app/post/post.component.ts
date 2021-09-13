@@ -13,30 +13,20 @@ import { Hero, Service } from './post.service';
 })
 
 export class PostComponent implements OnInit{
- dataSource:Hero[];
+ dataSource!:Hero[];
 
 
 
-  constructor(service:Service){
-    this.dataSource= service.getHeroes()
+  constructor(private service:Service){
+   
   }
 
-    editorPreparing(e:any) {
-      if(e.dataField === "Head_ID" && e.row.data.ID === 1) {
-          e.editorOptions.disabled = true;
-          e.editorOptions.value = null;
-      }
-    
-  }
-  initNewRow(e:any) {
-    e.data.Head_ID = 1;
-   }
   
   
  
 
     ngOnInit(){
-      
+      this.service.getHeroes().subscribe((data:any)=>{this.dataSource = data})
      
     }
   }

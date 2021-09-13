@@ -32,7 +32,7 @@
             ],
             "styles": [
               "src/styles.less",
-              "C:/Users/lilm8/Desktop/PracticalJS/information-post/info-post/node_modules/devextreme/dist/css/dx.carmine.compact.css"
+              "C:/Users/lilm8/Desktop/PracticalJS/information-post/info-post/node_modules/devextreme/dist/css/dx.material.teal.light.css"
             ],
             "scripts": []
           },

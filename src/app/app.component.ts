@@ -6,8 +6,5 @@ import "@angular/compiler";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    helloWorld() {
-        alert('Hello world!');
-    }
-    title="Info-posts"
+    title="info-post"
 }

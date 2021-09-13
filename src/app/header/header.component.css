@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/monoton/v10/5h1aiZUrOngCibe4fkY.ttf) format('truetype');
+}
+header {
+  height: 120px;
+  width: 1024px;
+  margin: -7px auto;
+}
+.empty__box {
+  position: absolute;
+  background-color: #adf1ef66;
+  box-shadow: 0px 0px 7px black;
+  margin: 0 auto ;
+  height: 120px;
+}
+.title {
+  width: 1024px;
+  display: block;
+}
+.text {
+  font-family: 'Monoton', cursive;
+  font-size: 250%;
+  margin: 40px 20px 0;
+}
+.prg {
+  font-family: 'Monserat', bold;
+  font-size: 125%;
+  display: block;
+  float: right;
+  margin: -45px 10px;
+  letter-spacing: 2px;
+}
