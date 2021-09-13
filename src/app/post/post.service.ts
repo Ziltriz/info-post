@@ -1,9 +1,11 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, NgModule } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
-export class Hero {
+export class User {
 	
 	userId!: number;
 	id!:number;
@@ -14,18 +16,16 @@ export class Hero {
 
 
 
-let _url = "https://jsonplaceholder.typicode.com/posts"; 
-
 
 @Injectable()
 export class Service {
 
 	constructor(private http:HttpClient){}
-    getHeroes() {
+    getUsers(_url:string) {
     
-        return this.http.get<Hero[]>(_url);
+        return this.http.get<User[]>(_url)
+	   
     }
-    
-}
 
+}
 

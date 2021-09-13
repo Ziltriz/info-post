@@ -1,6 +1,6 @@
 
-import { Component, NgModule, OnInit } from '@angular/core';
-import { Hero, Service } from './post.service';
+import { Component, OnInit } from '@angular/core';
+import {  Service, User } from './post.service';
 
 
 
@@ -13,21 +13,14 @@ import { Hero, Service } from './post.service';
 })
 
 export class PostComponent implements OnInit{
- dataSource!:Hero[];
-
-
+ dataSource!:User[];
+  _url = "https://jsonplaceholder.typicode.com/posts"; 
 
   constructor(private service:Service){
    
   }
-
-  
-  
- 
-
-    ngOnInit(){
-      this.service.getHeroes().subscribe((data:any)=>{this.dataSource = data})
-     
+  ngOnInit(){
+      this.service.getUsers(this._url).subscribe((data:any)=>{this.dataSource = data})
     }
   }
     

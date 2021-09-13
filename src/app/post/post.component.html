@@ -38,13 +38,13 @@ itemExpr='userId'
                     type="stringLength"
                     [min]="1"
                     [max]="256"
-                    message="Body is invalid">
+                    message="Title is invalid">
                 </dxi-validation-rule>
     </dxi-column>
     <dxi-column dataField="body" caption="Message Body" >
         <dxi-validation-rule 
                     type="required"
-                    message="Title is required">
+                    message="Message body is required">
                 </dxi-validation-rule>
                 <dxi-validation-rule 
                     type="stringLength"
